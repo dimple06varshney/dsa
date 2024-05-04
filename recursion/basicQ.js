@@ -1,11 +1,11 @@
 // Print name N times using recursion
-function printNameNtimes(name, n) {
-   if(n== 0) return; 
-   console.log(name);
-   n--;
-   printNameNtimes(name, n) 
-}
-
+function printNameNtimes(name, n) {                       // printName('Dimple, 5) => 5 =/= 0 => print name => n=4, call again 
+   if(n== 0) return;                                     // printName(_, 4) => 4 =/= 0 => print name => n=3, call again with n=3
+   console.log(name);                                   // printName(_,3) => 3=/= 0 => print name => n=2, call again with n=2  
+   n--;                                                // printName(_,2) => 2=/= 0 => print name => n=1, call again with n=1
+   printNameNtimes(name, n)                           // printName(_,1) => 2=/= 0 => print name => n=0, call again with n=0   
+}                                                    // printName(_,0) => 0 == 0 => return back so will return for all called functions that were waiting ins stack 
+                                                    // Res = TC: o(n) SC: o(n) (bcz every function wait in stack)  
 printNameNtimes('Dimple', 5)
 
 //  N to 1 Without Loop
